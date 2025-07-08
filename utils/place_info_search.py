@@ -1,10 +1,15 @@
 from langchain_tavily import TavilySearch
 import requests
 
+from dotenv import load_dotenv
+import os
+
 class GooglePlaceSearchTool:
-    def __init__(self, fsq_api_key: str, geoapify_key: str):
-        self.fsq_api_key = "LVSZTQYNWYPQZLKVFVYSZUY3IRCB0HRJS5S1SDSSHYXQL513"
-        self.geoapify_key = "d83616e0017d4aaa97da0c3647e13961"
+    def __init__(self):
+        load_dotenv()
+        self.fsq_api_key = os.getenv("fsq_api_key")
+        self.geoapify_key = os.getenv("GEOAPIFY_API_KEY")
+        
 
     def fsq_search(self, query: str, near: str) -> dict:
         url = "https://api.foursquare.com/v3/places/search"
