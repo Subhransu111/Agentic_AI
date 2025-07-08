@@ -9,7 +9,7 @@ class PlaceSearchTool:
         load_dotenv()
         self.fsq_api_key = os.getenv("fsq_api_key")
         self.geoapify_key = os.getenv("GEOAPIFY_API_KEY")
-        self.google_places_search = GooglePlaceSearchTool(self.fsq_api_key , self.geoapify_key)
+        self.google_places_search = GooglePlaceSearchTool( )
         self.tavily_search = TavilyPlaceSearchTool()
         self.place_search_tool_list = self._setup_tools()
 
