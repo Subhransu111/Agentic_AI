@@ -1,6 +1,12 @@
 import streamlit as st
 import requests
 import datetime
+from dotenv import load_dotenv
+from pathlib import Path
+
+# Load environment variables from .env file
+env_path = Path(__file__).parent / ".env"
+load_dotenv(dotenv_path=env_path)
 
 BASE_URL = "http://localhost:8000"  # Replace with your actual API URL
 
